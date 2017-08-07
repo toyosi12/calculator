@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>calculator 1.3</title>
+<link type="text/css" rel="stylesheet" href="calc1.3.css">
+<script>
+function display(val){
+	document.getElementById("result").value+=val	
+}
+
+function cancel(val){
+		document.getElementById("result").value=val;
+}
+function calc(){
+		//cancel(eval(document.getElementById("result").value));
+		document.getElementById("result").value=eval(document.getElementById("result").value);
+		
+}
+function delet(){
+	var num = document.getElementById("result").value;
+	var seg = num.slice(0,(num.length-1));
+	document.getElementById("result").value = seg;	
+}
+function msine(){
+  n = Math.sin(document.getElementById("result").value*(11/630));
+  document.getElementById("result").value = n;
+}
+function mcos(){
+  n = Math.cos(document.getElementById("result").value*(11/630));
+  document.getElementById("result").value = n;
+}
+function mtan(){
+  n = Math.tan(document.getElementById("result").value*(11/630));
+  document.getElementById("result").value = n;
+}
+
+</script>
+</head>
+
+<body>
+<table border="0" cellpadding="6" >
+<tr>
+    <td colspan="4" id="soft">softCALC</td>
+  </tr>
+  <tr>
+    <td colspan="4"><input type="text" value="" id="result"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="Submit" id="sin" value="sin" onClick='msine()'></td>
+    <td><input type="submit" name="Submit" id="cos" value="cos" onClick='mcos()'></td>
+    <td><input type="submit" name="button2" id="tan" value="tan" onClick='mtan()'></td>
+    <td><input type="submit" name="Submit" id="pi" value="pi" onClick='display(Math.PI)'></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="Submit" id="c" value="C" onClick='cancel("")'></td>
+    <td><input type="submit" name="Submit" id="del" value="del" onClick="delet()"></td>
+    <td><input type="submit" name="button2" id="%" value="%" onClick='display("%")'></td>
+    <td><input type="submit" name="Submit" id="/" value="/" onClick='display("/")'></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="Submit" id="7" value="7" onClick='display("7")'></td>
+    <td><input type="submit" name="Submit" id="8" value="8" onClick='display("8")'></td>
+    <td><input type="submit" name="Submit" id="9" value="9" onClick='display("9")'></td>
+    <td><input type="submit" name="Submit" id="-" value="-" onClick='display("-")'></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="Submit" id="4" value="4" onClick='display("4")'></td>
+    <td><input type="submit" name="Submit" id="5" value="5" onClick='display("5")'></td>
+    <td><input type="submit" name="Submit" id="6" value="6" onClick='display("6")'></td>
+    <td><input type="submit" name="Submit" id="*" value="*" onClick='display("*")'></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="Submit" id="1" value="1" onClick='display("1")'></td>
+    <td><input type="submit" name="Submit" id="2" value="2" onClick='display("2")'></td>
+    <td><input type="submit" name="Submit" id="3" value="3" onClick='display("3")'></td>
+    <td rowspan="2"><input type="submit" name="Submit" id="plus" value="+" onClick='display("+")'></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="Submit" id="." value="." onClick='display(".")'></td>
+    <td><input type="submit" name="button3" id="0" value="0" onClick='display("0")'></td>
+    <td><input type="submit" name="button4" id="=" value="=" onClick="calc()"></td>
+    <td></td>
+  </tr>
+</table>
+</body>
+</html>
